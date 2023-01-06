@@ -1,11 +1,11 @@
 def get_input():
     with open("./input.txt") as f:
-        input = f.read()
-    return input
+        input_lines = f.read()
+    return input_lines
 
 
-def part1(input):
-    boxes, movements = input.split("\n\n")
+def part1(input_lines):
+    boxes, movements = input_lines.split("\n\n")
     
     letters = []
     for line in boxes.split("\n"):
@@ -28,8 +28,8 @@ def part1(input):
     
       
         
-def part2(input):
-    boxes, movements = input.split("\n\n")
+def part2(input_lines):
+    boxes, movements = input_lines.split("\n\n")
     
     letters = []
     for line in boxes.split("\n"):
@@ -50,6 +50,6 @@ def part2(input):
     return "".join(last)
    
             
-input = get_input()
-print(f"Part 1: {part1(input)}")
-print(f"Part 2: {part2(input)}")
+input_lines = get_input()
+print(f"Part 1: {part1(input_lines)}")
+print(f"Part 2: {part2(input_lines)}")
