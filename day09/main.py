@@ -1,7 +1,7 @@
 def get_input():
     with open("./input.txt") as f:
-        input = f.read().splitlines()
-    return input
+        input_lines = f.read().splitlines()
+    return input_lines
 
 # How the position changes for each direction. Save them in a dict instead of having to check them with conditionals.
 DIRECTIONS = {
@@ -11,14 +11,14 @@ DIRECTIONS = {
     "D": (0, -1)
 }
 
-def part1(input):
+def part1(input_lines):
     visited = set()
     visited.add((0, 0))
     
     hx, hy = 0, 0
     tx, ty = 0, 0
     
-    for l in input:
+    for l in input_lines:
         d, s = l.split()
         dx, dy = DIRECTIONS[d]
         
@@ -38,13 +38,13 @@ def part1(input):
     return len(visited)
       
         
-def part2(input):
+def part2(input_lines):
     knots = [[0, 0] for _ in range(10)]
     
     visited = set()
     visited.add(tuple(knots[-1]))
     
-    for l in input:
+    for l in input_lines:
         d, s = l.split()
         dx, dy = DIRECTIONS[d]
         
@@ -71,6 +71,6 @@ def part2(input):
 
       
 
-input = get_input()
-print(f"Part 1: {part1(input)}")
-print(f"Part 2: {part2(input)}")
+input_lines = get_input()
+print(f"Part 1: {part1(input_lines)}")
+print(f"Part 2: {part2(input_lines)}")
