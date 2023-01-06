@@ -1,15 +1,15 @@
 def get_input():
     with open("./input.txt") as f:
-        input = f.read().splitlines()
+        input_lines = f.read().splitlines()
         
-    return input
+    return input_lines
 
 
-def part1(input):
+def part1(input_lines):
     calories = []
     elf_calories = 0
 
-    for line in input:
+    for line in input_lines:
         if line:
             elf_calories += int(line)
         else:
@@ -19,11 +19,11 @@ def part1(input):
     return max(calories)
 
 
-def part2(input):
+def part2(input_lines):
     calories = []
     elf_calories = 0
 
-    for line in input:
+    for line in input_lines:
         if line:
             elf_calories += int(line)
         else:
@@ -34,6 +34,6 @@ def part2(input):
     return sum(calories[-3:])
 
 
-input = get_input()
-print(f"Part 1: {part1(input)}")
-print(f"Part 2: {part2(input)}")
+input_lines = get_input()
+print(f"Part 1: {part1(input_lines)}")
+print(f"Part 2: {part2(input_lines)}")
