@@ -1,6 +1,6 @@
-def get_input_lines():
+def get_input():
     with open("./input.txt") as f:
-        input = f.read().splitlines()
+        input_lines = f.read().splitlines()
     return input_lines
 
     
