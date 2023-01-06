@@ -1,15 +1,15 @@
 def get_input():
     with open("./input.txt") as f:
-        input = f.read().splitlines()
-    return input
+        input_lines = f.read().splitlines()
+    return input_lines
 
 
-def part1(input):
+def part1(input_lines):
     size = 100000
     total = 0
     
     stack = [["/", 0]]
-    for line in input:
+    for line in input_lines:
         if line == "$ cd /" or line == "$ ls":
             continue
         
@@ -31,13 +31,13 @@ def part1(input):
     return total
     
         
-def part2(input):
+def part2(input_lines):
     total_space = 70000000
     update_space = 30000000
     
     stack = [["/", 0]]
     complete_stack = []
-    for line in input:
+    for line in input_lines:
         if line == "$ cd /" or line == "$ ls":
             continue
         
@@ -66,6 +66,6 @@ def part2(input):
     return min([dir[1] for dir in complete_stack if dir[1] >= required_space])    
       
 
-input = get_input()
-print(f"Part 1: {part1(input)}")
-print(f"Part 2: {part2(input)}")
+input_lines = get_input()
+print(f"Part 1: {part1(input_lines)}")
+print(f"Part 2: {part2(input_lines)}")
