@@ -1,11 +1,11 @@
 def get_input():
     with open("./input.txt") as f:
-        input = f.read().splitlines()
-    return input
+        input_lines = f.read().splitlines()
+    return input_lines
 
 
-def part1(input):
-    rows = [[int(n) for n in l] for l in input]
+def part1(input_lines):
+    rows = [[int(n) for n in l] for l in input_lines]
     
     perimeter = (len(rows) * 4) - 4
     visible = 0
@@ -30,8 +30,8 @@ def part1(input):
     return visible + perimeter
       
         
-def part2(input):
-    rows = [[int(n) for n in l] for l in input]
+def part2(input_lines):
+    rows = [[int(n) for n in l] for l in input_lines]
     directions = []
     nums  = []
     
@@ -80,6 +80,6 @@ def part2(input):
 
       
 
-input = get_input()
-print(f"Part 1: {part1(input)}")
-print(f"Part 2: {part2(input)}")
+input_lines = get_input()
+print(f"Part 1: {part1(input_lines)}")
+print(f"Part 2: {part2(input_lines)}")
