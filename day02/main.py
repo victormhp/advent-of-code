@@ -5,11 +5,11 @@
 
 def get_input():
     with open("./input.txt") as f:
-        input = f.read().splitlines()
-    return input
+        input_lines = f.read().splitlines()
+    return input_lines
 
 
-def part1(input):
+def part1(input_lines):
     results = {
     "A X": 3 + 1,
     "A Y": 6 + 2,
@@ -23,13 +23,13 @@ def part1(input):
 }
 
     points = 0
-    for game in input:
+    for game in input_lines:
         points += results[game]
         
     return points
 
 
-def part2(input):
+def part2(input_lines):
     results = {
     "A X": 3,
     "A Y": 3 + 1,
@@ -43,12 +43,12 @@ def part2(input):
 }
 
     points = 0
-    for game in input:
+    for game in input_lines:
         points += results[game]
         
     return points
     
     
-input = get_input()
-print(f"Part 1: {part1(input)}")
-print(f"Part 2: {part2(input)}")
+input_lines = get_input()
+print(f"Part 1: {part1(input_lines)}")
+print(f"Part 2: {part2(input_lines)}")
