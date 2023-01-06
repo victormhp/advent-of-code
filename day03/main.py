@@ -2,16 +2,16 @@ import string
 
 def get_input():
     with open("./input.txt") as f:
-        input = f.read().splitlines()
-    return input
+        input_lines = f.read().splitlines()
+    return input_lines
 
 # String with all the lowercase and uppercase letters
 letters = string.ascii_letters
 
-def part1(input):
+def part1(input_lines):
     s = 0
     
-    for i in input:
+    for i in input_lines:
         first = i[:len(i) // 2]
         second = i[len(i) // 2:]
          
@@ -19,15 +19,15 @@ def part1(input):
     
     return s
 
-def part2(input):
+def part2(input_lines):
     s = 0
-    groupsOfThree = [input[i:i+3] for i in range(0, len(input), 3)]
+    groupsOfThree = [input_lines[i:i+3] for i in range(0, len(input_lines), 3)]
     
     for i in groupsOfThree:
         s += letters.index(''.join(sorted( set(i[0]) & set(i[1]) & set(i[2]) ))) + 1
     
     return s
             
-input = get_input()
-print(f"Part 1: {part1(input)}")
-print(f"Part 2: {part2(input)}")
+input_lines = get_input()
+print(f"Part 1: {part1(input_lines)}")
+print(f"Part 2: {part2(input_lines)}")
