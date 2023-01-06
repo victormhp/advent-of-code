@@ -1,12 +1,12 @@
 def get_input():
     with open("./input.txt") as f:
-        input = f.read().splitlines()
-    return input
+        input_lines = f.read().splitlines()
+    return input_lines
 
 
-def part1(input):
+def part1(input_lines):
     count = 0
-    for i in input:
+    for i in input_lines:
         a, b = i.split(",")
         n1, n2 = map(int, a.split("-"))
         n3, n4 = map(int, b.split("-"))
@@ -20,9 +20,9 @@ def part1(input):
     return count
         
         
-def part2(input):
+def part2(input_lines):
     count = 0
-    for i in input:
+    for i in input_lines:
         a, b = i.split(",")
         n1, n2 = map(int, a.split("-"))
         n3, n4 = map(int, b.split("-"))
@@ -36,6 +36,6 @@ def part2(input):
     return count
    
             
-input = get_input()
-print(f"Part 1: {part1(input)}")
-print(f"Part 2: {part2(input)}")
+input_lines = get_input()
+print(f"Part 1: {part1(input_lines)}")
+print(f"Part 2: {part2(input_lines)}")
